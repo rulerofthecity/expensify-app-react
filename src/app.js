@@ -17,30 +17,6 @@ import "./styles/styles.scss";
 
 const store = configureStore();
 
-store.subscribe(() => {
-  const state = store.getState();
-  const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-  // console.log(store.getState());
-  // console.log(visibleExpenses);
-});
-
-store.dispatch(
-  addExpense({ description: "Water bill", amount: 1000, createdAt: 12000 })
-);
-store.dispatch(
-  addExpense({ description: "Electricity bill", amount: 700, createdAt: 250 })
-);
-store.dispatch(
-  addExpense({ description: "Telephone bill", amount: 90.5, createdAt: 500 })
-);
-store.dispatch(
-  addExpense({ description: "Rent", amount: 1200, createdAt: 1010 })
-);
-
-// store.dispatch(setStartDate(25));
-// store.dispatch(setEndDate(100250));
-
-store.dispatch(sortByDate());
 const jsx = (
   <Provider store={store}>
     <AppRouter />
