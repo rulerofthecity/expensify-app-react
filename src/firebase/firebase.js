@@ -1,12 +1,13 @@
-import * as firebase from 'firebase';
+import * as firebase from "firebase";
 
 const config = {
-  apiKey: "AIzaSyAapA5P8gWC83aHK26xgDDMzIBC4dw914w",
-  authDomain: "expensify-a13e6.firebaseapp.com",
-  databaseURL: "https://expensify-a13e6.firebaseio.com",
-  projectId: "expensify-a13e6",
-  storageBucket: "expensify-a13e6.appspot.com",
-  messagingSenderId: "124728096317"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.FIREBASE_DATABASE_URL,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
 };
 
 firebase.initializeApp(config);
@@ -65,11 +66,6 @@ export { firebase, database as default };
 //   createdAt: 976123498763
 // });
 
-
-
-
-
-
 // // database.ref('notes/-Krll52aVDQ3X6dOtmS7').remove();
 
 // // database.ref('notes').push({
@@ -96,23 +92,27 @@ export { firebase, database as default };
 // //     console.log('Error fetching data', e);
 // //   });
 
-// // database.ref().set({
-// //   name: 'Andrew Mead',
-// //   age: 26,
-// //   stressLevel: 6,
-// //   job: {
-// //     title: 'Software developer',
-// //     company: 'Google'
-// //   },
-// //   location: {
-// //     city: 'Philadelphia',
-// //     country: 'United States'
-// //   }
-// // }).then(() => {
-// //   console.log('Data is saved!');
-// // }).catch((e) => {
-// //   console.log('This failed.', e);
-// // });
+// database
+//   .ref()
+//   .set({
+//     name: "Andrew Mead",
+//     age: 26,
+//     stressLevel: 6,
+//     job: {
+//       title: "Software developer",
+//       company: "Google",
+//     },
+//     location: {
+//       city: "Philadelphia",
+//       country: "United States",
+//     },
+//   })
+//   .then(() => {
+//     console.log("Data is saved!");
+//   })
+//   .catch((e) => {
+//     console.log("This failed.", e);
+//   });
 
 // // database.ref().update({
 // //   stressLevel: 9,
